@@ -40,7 +40,7 @@ public class App implements RequestHandler<Map<String,Object>, GatewayResponse> 
     private static final int workspaceId;
 
     static {
-        String workspace = System.getenv("BLAZEMETER_WORKSPACE"); // in the format "user:password"
+        String workspace = System.getenv("BLAZEMETER_WORKSPACE");
         if (workspace == null) {
             throw new IllegalStateException("env BLAZEMETER_WORKSPACE not set");
         }
