@@ -103,7 +103,8 @@ public class App implements RequestHandler<Map<String,Object>, GatewayResponse> 
 
             final List results;
 
-            if ("/search".equals(path)) {
+            // version 0.5.0 uses '/search' and 0.6.0 and newer use '/metrics'
+            if ("/search".equals(path) || "/metrics".equals(path)) {
                 // TODO not sure what this is for?
                 String target = (String) ((Map)bodyJson).get("target");
                 results = Arrays.asList(
